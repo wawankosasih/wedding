@@ -167,7 +167,7 @@ window.addEventListener("load", function () {
     }
     const data = new FormData(form);
     const action = e.target.action;
-    const input = form.querySelectorAll("input,select,bbutton");
+    const input = form.querySelectorAll("input,select,button");
     input.forEach((input) => {
       input.disabled = true;
     });
