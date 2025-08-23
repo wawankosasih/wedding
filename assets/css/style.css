@@ -204,6 +204,20 @@ body.transition {
   height: 100%;
 }
 
+/* Mobile view */
+@media (max-width: 768px) {
+  #hero-section {
+    background-position: top center; /* fokus ke bagian atas */
+  }
+}
+
+/* Bisa tambah khusus layar kecil banget */
+@media (max-width: 480px) {
+  #hero-section {
+    background-position: 30% center; /* geser fokus biar lebih pas */
+  }
+}
+
 /* pembuka */
 .text-pink {
   color: var(--biru);
@@ -425,26 +439,6 @@ body.transition {
   border-bottom: 14px solid transparent;
 }
 
-/* Mobile */
-/* @media (max-width: 480px) {
-  .timeline > li > .timeline-panel {
-    width: 75% !important;
-  }
-  .timeline > li > .timeline-panel:before {
-    top: 30px;
-  }
-  .timeline > li > .timeline-panel:after {
-    top: 31px;
-  }
-  .timeline:before {
-    margin-left: -64px;
-  }
-  .timeline > li > .timeline-badge {
-    width: 60px;
-    height: 60px;
-    margin-left: -20px !important;
-  }
-} */
 /* Mobile, versi sama kayak tablet tapi scaled down */
 @media (max-width: 480px) {
   .timeline:before {
@@ -635,4 +629,12 @@ body.transition {
   width: 100%;
   height: 100%;
   border: 0;
+}
+/* 🎁 Style khusus gift card */
+.gift-card {
+  background: linear-gradient(135deg, #9c27b0, #e91e63);
+}
+.gift-card .card-logo {
+  left: auto;
+  right: 15px;
 }

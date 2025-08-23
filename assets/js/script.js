@@ -144,6 +144,35 @@ function copyText(el, event) {
   }
 }
 
+function copyAddress(el) {
+  var content = jQuery(el)
+    .siblings("div.card-container")
+    .find("div.card-address")
+    .text()
+    .trim();
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(content).then(function () {
+      jQuery(el).text("Alamat disalin!");
+      setTimeout(function () {
+        jQuery(el).html(`<i class="fas fa-fw fa-copy"></i> Copy Alamat`);
+      }, 1500);
+    });
+  } else {
+    // fallback lama
+    var temp = document.createElement("textarea");
+    temp.value = content;
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+    jQuery(el).text("Alamat disalin!");
+    setTimeout(function () {
+      jQuery(el).html(`<i class="fas fa-fw fa-copy"></i> Copy Alamat`);
+    }, 1500);
+  }
+}
+
 //RSVP
 window.addEventListener("load", function () {
   const form = this.document.getElementById("rsvp-form");
